@@ -1,17 +1,17 @@
 {
-  "name": "ember-mask-input",
-  "version": "1.0.0",
-  "description": "Ember input component that uses jquery-mask-plugin",
+  "name": "ember-time-enabled-pikaday",
+  "version": "1.0.1",
+  "description": "time enabled extension of ember-pikaday",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "ahmetemrekilinc",
+  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/ahmetemrekilinc/ember-mask-input.git",
+  "repository": "https://github.com/ahmetemrekilinc/ember-time-enabled-pikaday.git",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -19,7 +19,10 @@
   },
   "dependencies": {
     "ember-cli-babel": "6.8.2",
-    "jquery-mask-plugin": "1.14.11"
+    "ember-cli-moment-shim": "3.5.0",
+    "ember-moment": "7.4.1",
+    "ember-pikaday": "2.2.3",
+    "pikaday-time": "1.6.1"
   },
   "devDependencies": {
     "broccoli-asset-rev": "2.6.0",
