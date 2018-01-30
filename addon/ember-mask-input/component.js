@@ -1,7 +1,10 @@
-import Ember from 'ember';
-import {MASK_MAPPING} from './masks';
+import { scheduleOnce } from '@ember/runloop';
+import { isBlank, isPresent, isEmpty } from '@ember/utils';
+import { computed, observer } from '@ember/object';
+import Component from '@ember/component';
+import { MASK_MAPPING } from './masks';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName:'input',
   attributeBindings: [
     'accept',
@@ -45,40 +48,40 @@ export default Ember.Component.extend({
   selectionStartPosition : 0,
   selectionEndPosition : 0,
 
-  _mask: Ember.computed('maskType', 'mask', function(){
+  _mask: computed('maskType', 'mask', function(){
     let mask = null;
     let type = this.get('maskType');
-    if(!Ember.isBlank(type)){
+    if(!isBlank(type)){
       mask = MASK_MAPPING[this.get('maskType')];
     }
-    if(Ember.isBlank(mask)){
+    if(isBlank(mask)){
       return this.get('mask');
     }else{
       return mask;
     }
   }),
 
-  _clearIfNotMatch:Ember.computed('clearIfNotMatch', function() {
-    if (Ember.isPresent(this.get('clearIfNotMatch'))) {
+  _clearIfNotMatch:computed('clearIfNotMatch', function() {
+    if (isPresent(this.get('clearIfNotMatch'))) {
       return this.get('clearIfNotMatch');
     }
     return false;
   }),
 
-  _selectOnFocus:Ember.computed('selectOnFocus', function() {
-    if (Ember.isPresent(this.get('selectOnFocus'))) {
+  _selectOnFocus:computed('selectOnFocus', function() {
+    if (isPresent(this.get('selectOnFocus'))) {
       return this.get('selectOnFocus');
     }
     return false;
   }),
 
-  valueChangedObserver:Ember.observer('value', function(){
+  valueChangedObserver:observer('value', function(){
     this.fillUnmaskedValueAsMasked();
   }),
 
   didInsertElement() {
     this._super(...arguments);
-    if(Ember.isPresent(this.get('_mask'))){
+    if(isPresent(this.get('_mask'))){
       this.$().mask(this.get('_mask'),
       {
         clearIfNotMatch: this.get('_clearIfNotMatch'),
@@ -96,9 +99,9 @@ export default Ember.Component.extend({
   },
 
   fillUnmaskedValueAsMasked(){
-    if(Ember.isPresent(this.get('_mask'))){
-      Ember.run.scheduleOnce('afterRender', this, function(){
-        let unmaskedValue = Ember.isPresent(this.get('_mask')) ? this.$().cleanVal() : this.get('value');
+    if(isPresent(this.get('_mask'))){
+      scheduleOnce('afterRender', this, function(){
+        let unmaskedValue = isPresent(this.get('_mask')) ? this.$().cleanVal() : this.get('value');
 
         if(this.get('maskType') === 'iban'){
           unmaskedValue = String(unmaskedValue).toUpperCase();
@@ -115,8 +118,8 @@ export default Ember.Component.extend({
   },
 
   _domValueChanged(){
-    let unmaskedValue = Ember.isPresent(this.get('_mask')) ? this.$().cleanVal() : this.get('value');
-    let maskedValue = Ember.isPresent(this.get('_mask')) ? this.$().val() : this.get('value');
+    let unmaskedValue = isPresent(this.get('_mask')) ? this.$().cleanVal() : this.get('value');
+    let maskedValue = isPresent(this.get('_mask')) ? this.$().val() : this.get('value');
 
     let valueToBeSent = this.get('bindMasked') === true ? maskedValue : unmaskedValue;
 
@@ -130,8 +133,8 @@ export default Ember.Component.extend({
 
     let oldValue = this.get('value');
 
-    if(valueToBeSent !== oldValue && !(Ember.isEmpty(valueToBeSent) && Ember.isEmpty(oldValue))){
-      if(Ember.isEmpty(valueToBeSent)){
+    if(valueToBeSent !== oldValue && !(isEmpty(valueToBeSent) && isEmpty(oldValue))){
+      if(isEmpty(valueToBeSent)){
         valueToBeSent = null;
       }
       this.set('value', valueToBeSent);

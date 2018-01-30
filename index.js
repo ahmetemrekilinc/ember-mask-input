@@ -1,9 +1,8 @@
-/* eslint-env node */
 'use strict';
 
 var path = require('path'),
-mergeTrees = require('broccoli-merge-trees'),
-Funnel = require('broccoli-funnel');
+  mergeTrees = require('broccoli-merge-trees'),
+  Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-mask-input',
