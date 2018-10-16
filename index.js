@@ -5,7 +5,7 @@ var path = require('path'),
   Funnel = require('broccoli-funnel');
 
 module.exports = {
-  name: 'ember-mask-input',
+  name: require('./package').name,
 
   isDevelopingAddon : function(){
     return true;

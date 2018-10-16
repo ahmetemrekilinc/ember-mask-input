@@ -1,50 +1,51 @@
-# ember-mask-input
+ember-mask-input
+==============================================================================
 
-This README outlines the details of collaborating on this ember-mask-input addon.
+[Short description of the addon.]
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
-```bash
-cd your-project-directory
+```
 ember install ember-mask-input
 ```
 
-## Usage
-Simple IBAN masked input:
-```handlebars
-{{ember-mask-input maskType='iban' value='TR625373458726249832302425' }}
-```
 
-Simple phone-no masked input:
-```handlebars
-{{ember-mask-input maskType='phone-no' value='2223334455' }}
-```
+Usage
+------------------------------------------------------------------------------
 
-Simple credit-card masked input:
-```handlebars
-{{ember-mask-input maskType='credit-card' value='2222333344445555' }}
-```
+[Longer description of how to use the addon in apps.]
 
-Simple custom masked input:
-```handlebars
-{{ember-mask-input mask='0000.0000.0000.0000' value='9876987612341234' }}
-```
 
-Actioned masked input:
-```handlebars
-{{ember-mask-input maskType='iban' value=myIban onUpdate=(action 'valueUpdated') }}
-<br/>
-Updated value: {{updatedValue}}
-```
+Contributing
+------------------------------------------------------------------------------
 
-classNames binding masked input:
-```handlebars
-{{ember-mask-input value='TR625373458726249832302426' maskType='iban' classNames='myclass' }}
-<style>
-.myclass {
-    width: 400px;
-    font-weight: bold;
-    font-style: italic;
-}
-</style>
-```
+### Installation
+
+* `git clone <repository-url>`
+* `cd ember-mask-input`
+* `yarn install`
+
+### Linting
+
+* `yarn lint:hbs`
+* `yarn lint:js`
+* `yarn lint:js --fix`
+
+### Running tests
+
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `ember try:each` – Runs the test suite against multiple Ember versions
+
+### Running the dummy application
+
+* `ember serve`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
+
+For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
