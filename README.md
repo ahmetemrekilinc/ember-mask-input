@@ -1,49 +1,39 @@
 ember-mask-input
 ==============================================================================
 
-[Short description of the addon.]
+ember-mask-input is an addon that enables you creating masked text inputs in your Ember.js application.
+[jquery-mask-plugin](https://github.com/igorescobar/jQuery-Mask-Plugin) is used in background.
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
+cd your-project-directory
 ember install ember-mask-input
 ```
-
 
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+You can pass your value as `value` parameter and custom mask type as `mask` parameter.
+```hbs
+{{ember-mask-input value='1234123443214321' mask='0000.0000.0000.0000' }}
+```
 
+You can handle actions as `onUpdate` parameter.
+```hbs
+{{ember-mask-input value='1234123443214321' mask='0000.0000.0000.0000' onUpdate=(action 'myMaskAction') }}
+```
 
-Contributing
-------------------------------------------------------------------------------
+You can use default `maskType` parameters which are `iban`, `phone-no`, `credit-card`.
+```hbs
+{{ember-mask-input alue='TR62 5373 4587 2624 9832 3024 26' maskType='iban' }}
+```
 
-### Installation
-
-* `git clone <repository-url>`
-* `cd ember-mask-input`
-* `yarn install`
-
-### Linting
-
-* `yarn lint:hbs`
-* `yarn lint:js`
-* `yarn lint:js --fix`
-
-### Running tests
-
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+You can bind masked value by setting `bindMasked` parameter to `true`.
+```hbs
+{{ember-mask-input alue='TR62 5373 4587 2624 9832 3024 26' maskType='iban' bindMasked=true }}
+```
 
 License
 ------------------------------------------------------------------------------
