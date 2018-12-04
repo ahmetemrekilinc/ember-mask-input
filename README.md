@@ -27,12 +27,12 @@ You can handle actions as `onUpdate` parameter.
 
 You can use default `maskType` parameters which are `iban`, `phone-no`, `credit-card`.
 ```hbs
-{{ember-mask-input alue='TR62 5373 4587 2624 9832 3024 26' maskType='iban' }}
+{{ember-mask-input value='TR625373458726249832302426' maskType='iban' }}
 ```
 
 You can bind masked value by setting `bindMasked` parameter to `true`.
 ```hbs
-{{ember-mask-input alue='TR62 5373 4587 2624 9832 3024 26' maskType='iban' bindMasked=true }}
+{{ember-mask-input value='TR62 5373 4587 2624 9832 3024 26' maskType='iban' bindMasked=true }}
 ```
 
 License
