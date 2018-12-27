@@ -1,6 +1,6 @@
 {
   "name": "ember-mask-input",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "description": "Ember input component that uses jquery-mask-plugin",
   "keywords": [
     "ember-addon"

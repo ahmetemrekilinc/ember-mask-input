@@ -1,6 +1,13 @@
 ember-mask-input
 ==============================================================================
 
+[![npm version](https://badge.fury.io/js/ember-mask-input.svg)](https://badge.fury.io/js/ember-mask-input.svg)
+[![Build Status](https://travis-ci.org/ahmetemrekilinc/ember-mask-input.svg?branch=master)](https://travis-ci.org/ahmetemrekilinc/ember-mask-input.svg?branch=master)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-mask-input.svg)](https://emberobserver.com/badges/ember-mask-input.svg)
+[![Dependency Status](https://david-dm.org/ahmetemrekilinc/ember-mask-input.svg)](https://david-dm.org/ahmetemrekilinc/ember-mask-input.svg)
+[![devDependency Status](https://david-dm.org/ahmetemrekilinc/ember-mask-input/dev-status.svg)](https://david-dm.org/ahmetemrekilinc/ember-mask-input/dev-status.svg)
+[![Code Climate](https://codeclimate.com/github/ahmetemrekilinc/ember-mask-input/badges/gpa.svg)](https://codeclimate.com/github/ahmetemrekilinc/ember-mask-input/badges/gpa.svg)
+
 ember-mask-input is an addon that enables you creating masked text inputs in your Ember.js application.
 [jquery-mask-plugin](https://github.com/igorescobar/jQuery-Mask-Plugin) is used in background.
 
