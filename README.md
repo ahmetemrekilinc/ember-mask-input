@@ -2,6 +2,7 @@ ember-mask-input
 ==============================================================================
 
 [![npm version](https://badge.fury.io/js/ember-mask-input.svg)](https://badge.fury.io/js/ember-mask-input.svg)
+[![downloads](https://img.shields.io/npm/dm/ember-mask-input.svg?style=flat-square)](https://img.shields.io/npm/dm/ember-mask-input.svg?style=flat-square)
 [![Build Status](https://travis-ci.org/ahmetemrekilinc/ember-mask-input.svg?branch=master)](https://travis-ci.org/ahmetemrekilinc/ember-mask-input.svg?branch=master)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-mask-input.svg)](https://emberobserver.com/badges/ember-mask-input.svg)
 [![Dependency Status](https://david-dm.org/ahmetemrekilinc/ember-mask-input.svg)](https://david-dm.org/ahmetemrekilinc/ember-mask-input.svg)
