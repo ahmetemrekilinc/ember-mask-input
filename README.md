@@ -43,6 +43,8 @@ You can bind masked value by setting `bindMasked` parameter to `true`.
 {{ember-mask-input value='TR62 5373 4587 2624 9832 3024 26' maskType='iban' bindMasked=true }}
 ```
 
+Checkout live examples at [ember-mask-input demo page](https://ahmetemrekilinc.github.io/ember-mask-input-demo/)
+
 License
 ------------------------------------------------------------------------------
 
