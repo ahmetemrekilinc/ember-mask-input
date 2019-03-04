@@ -16,9 +16,5 @@ module.exports = {
     //jquery-mask
     app.import('node_modules/jquery-mask-plugin/dist/jquery.mask.min.js');
 
-  },
-  config(){
-    let ENV = {};
-    return ENV;
   }
 };
