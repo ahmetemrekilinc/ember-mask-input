@@ -1,38 +1,44 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, fillIn } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent('ember-mask-input', 'Integration | Component | ember-mask-input', {
-  integration: true
-});
+module('Integration | Component | ember-mask-input', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('maskType=iban works', function(assert) {
-  this.set('obj', {val:'tr625373458726249832302425'});
-  this.render(hbs`{{ember-mask-input maskType='iban' value=obj.val}}`);
-  assert.equal(this.$('input').val().trim(), 'tr62 5373 4587 2624 9832 3024 25');
-});
+  test('maskType=iban works', async function(assert) {
+    await render(hbs`<EmberMaskInput @value="tr625373458726249832302425" @maskType='iban' />`);
 
-test('action fires', function(assert) {
-  this.set('obj', {val: 'tr625373458726249832302425'});
-  let actionListenerValue = null;
-  this.on('myMaskAction', function(val) {
-    actionListenerValue=val;
+    assert.equal(this.element.querySelector('input').value, 'tr62 5373 4587 2624 9832 3024 25');
   });
-  this.render(hbs`{{ember-mask-input maskType='iban' value=obj.val onUpdate=(action 'myMaskAction') }}`);
-  assert.equal(this.$('input').val().trim(), 'tr62 5373 4587 2624 9832 3024 25');
-  this.$('input').val('tr625373458726249832302427');
-  this.$('input').change();
-  assert.equal(actionListenerValue, 'TR625373458726249832302427');
-});
 
-test('bindMasked=true works', function(assert) {
-  this.set('obj', {val: 'tr625373458726249832302425'});
-  let actionListenerValue = null;
-  this.on('myMaskAction', function(val) {
-    actionListenerValue=val;
+  test('action fires', async function(assert) {
+    let actionListenerValue = null;
+    this.set('myMaskAction', (val) => {
+      actionListenerValue = val;
+    });
+
+    await render(hbs`<EmberMaskInput @value="tr625373458726249832302425" @maskType='iban' @onUpdate={{action myMaskAction}} />`);
+
+    assert.equal(this.element.querySelector('input').value, 'tr62 5373 4587 2624 9832 3024 25');
+
+    await fillIn('input', 'tr625373458726249832302427');
+
+    assert.equal(actionListenerValue, 'TR625373458726249832302427');
   });
-  this.render(hbs`{{ember-mask-input maskType='iban' value=obj.val onUpdate=(action 'myMaskAction') bindMasked=true }}`);
-  assert.equal(this.$('input').val().trim(), 'tr62 5373 4587 2624 9832 3024 25');
-  this.$('input').val('tr625373458726249832302427');
-  this.$('input').change();
-  assert.equal(actionListenerValue, 'TR62 5373 4587 2624 9832 3024 27');
+
+  test('bindMasked=true works', async function(assert) {
+    let actionListenerValue = null;
+    this.set('myMaskAction', (val) => {
+      actionListenerValue = val;
+    });
+
+    await render(hbs`<EmberMaskInput @value="tr625373458726249832302425" @maskType='iban' @bindMasked=true @onUpdate={{action myMaskAction}} />`);
+
+    assert.equal(this.element.querySelector('input').value, 'tr62 5373 4587 2624 9832 3024 25');
+
+    await fillIn('input', 'tr625373458726249832302427');
+
+    assert.equal(actionListenerValue, 'TR62 5373 4587 2624 9832 3024 27');
+  });
 });

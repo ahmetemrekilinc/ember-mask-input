@@ -1,1 +1,0 @@
-export {default} from 'ember-mask-input/ember-mask-input/component';

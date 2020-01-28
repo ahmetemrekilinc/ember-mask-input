@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="ember-view">
+  <ul class="app-tab">
+    <li class="app-tab-item"><a href="https://github.com/ahmetemrekilinc/ember-mask-input" target="_blank" rel="noopener noreferrer">Github</a></li>
+    <li class="app-tab-item"><a href="https://www.npmjs.com/package/ember-mask-input" target="_blank" rel="noopener noreferrer">Npmjs</a></li>
+  </ul>
+  <br>
+  <GenericDemoPage @name='Example Usage of Ember Mask Input' @files='showcase.hbs,showcase.js'>
+    <Showcase/>
+  </GenericDemoPage>
 
-{{outlet}}
+  {{outlet}}
+</div>
