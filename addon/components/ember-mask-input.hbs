@@ -1,0 +1,5 @@
+<input ...attributes id={{this.maskInputId}} value={{@value}}
+  {{did-insert this.maskFunc this._mask this._clearIfNotMatch this._selectOnFocus}}
+  {{did-update this.fillUnmaskedValueAsMasked this._mask this.selectionStartPosition this.selectionEndPosition this.maskType @value}}
+  {{on 'change' this._domValueChanged}}
+  {{on 'input' this._domValueChanged}}/>

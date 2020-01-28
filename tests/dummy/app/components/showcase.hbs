@@ -1,0 +1,15 @@
+<!-- //BEGIN-SNIPPET showcase -->
+<div>
+  <br>
+  Iban value: <EmberMaskInput @maskType='iban' @value={{this.ibanValue}} @onUpdate={{this.updateIbanValue}} class="mask-input" /> Binded value: {{this.ibanValue}}
+  <br>
+  Bind masked value: <EmberMaskInput @maskType='iban' @bindMasked='true' @value={{this.bindMaskedIbanValue}} @onUpdate={{this.updateBindMaskedIbanValue}} class="mask-input" /> Binded value: {{this.bindMaskedIbanValue}}
+  <br>
+  Action binding: <EmberMaskInput @maskType='iban' @value={{this.ibanValue}} @onUpdate={{this.updateIbanValue}} class="mask-input" /> Entered action: {{this.enteredAction}}
+  <br>
+  Custom mask: <EmberMaskInput @mask='0000.0000.0000.0000' @value={{this.customValue}} @onUpdate={{this.updateCustomValue}} class="mask-input" /> Binded value: {{this.customValue}}
+  <br>
+</div>
+<!-- //END-SNIPPET -->
+
+
