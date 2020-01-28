@@ -73,9 +73,9 @@ module.exports = async function() {
         name: 'ember-classic',
         env: {
           EMBER_OPTIONAL_FEATURES: JSON.stringify({
-            'application-template-wrapper': true,
-            'default-async-observers': false,
-            'template-only-glimmer-components': false
+            'application-template-wrapper': false,
+            'default-async-observers': true,
+            'template-only-glimmer-components': true
           })
         },
         ember: {
