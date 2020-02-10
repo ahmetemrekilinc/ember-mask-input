@@ -63,7 +63,7 @@ export default class EmberMaskInput extends Component {
     let unmaskedValue = isPresent(this._mask) ? $('#' + this.maskInputId).cleanVal() : this.args.value;
     let maskedValue = isPresent(this._mask) ? $('#' + this.maskInputId).val() : this.args.value;
 
-    let valueToBeSent = this.args.bindMasked === 'true' ? maskedValue : unmaskedValue;
+    let valueToBeSent = this.args.bindMasked === true ? maskedValue : unmaskedValue;
 
     // store current positions in variables
     let selectionStartPosition = $('#' + this.maskInputId)[0].selectionStart;

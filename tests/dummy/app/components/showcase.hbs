@@ -3,7 +3,7 @@
   <br>
   Iban value: <EmberMaskInput @maskType='iban' @value={{this.ibanValue}} @onUpdate={{this.updateIbanValue}} class="mask-input" /> Binded value: {{this.ibanValue}}
   <br>
-  Bind masked value: <EmberMaskInput @maskType='iban' @bindMasked='true' @value={{this.bindMaskedIbanValue}} @onUpdate={{this.updateBindMaskedIbanValue}} class="mask-input" /> Binded value: {{this.bindMaskedIbanValue}}
+  Bind masked value: <EmberMaskInput @maskType='iban' @bindMasked={{true}} @value={{this.bindMaskedIbanValue}} @onUpdate={{this.updateBindMaskedIbanValue}} class="mask-input" /> Binded value: {{this.bindMaskedIbanValue}}
   <br>
   Action binding: <EmberMaskInput @maskType='iban' @value={{this.ibanValue}} @onUpdate={{this.updateIbanValue}} class="mask-input" /> Entered action: {{this.enteredAction}}
   <br>

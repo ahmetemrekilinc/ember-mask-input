@@ -33,7 +33,7 @@ module('Integration | Component | ember-mask-input', function(hooks) {
       actionListenerValue = val;
     });
 
-    await render(hbs`<EmberMaskInput @value="tr625373458726249832302425" @maskType='iban' @bindMasked=true @onUpdate={{action myMaskAction}} />`);
+    await render(hbs`<EmberMaskInput @value="tr625373458726249832302425" @maskType='iban' @bindMasked={{true}} @onUpdate={{action myMaskAction}} />`);
 
     assert.equal(this.element.querySelector('input').value, 'tr62 5373 4587 2624 9832 3024 25');
 
