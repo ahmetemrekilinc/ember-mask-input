@@ -11,7 +11,13 @@ export default class EmberMaskInput extends Component {
   @tracked selectionStartPosition = 0;
   @tracked selectionEndPosition = 0;
 
-  maskInputId = 'maskInput-' + guidFor(this);
+  get maskInputId() {
+    let maskInputId = this.args.id;
+    if(isBlank(maskInputId)){
+      maskInputId = 'maskInput-' + guidFor(this);
+    }
+    return maskInputId;
+  }
 
   get _mask() {
     let mask = null;
