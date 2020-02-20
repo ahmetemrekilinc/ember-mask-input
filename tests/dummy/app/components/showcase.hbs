@@ -9,7 +9,8 @@
   <br>
   Custom mask: <EmberMaskInput @mask='0000.0000.0000.0000' @value={{this.customValue}} @onUpdate={{this.updateCustomValue}} class="mask-input" /> Binded value: {{this.customValue}}
   <br>
+  Phone number: <EmberMaskInput @maskType='phone-no' @onUpdate={{this.updatePhoneNumber}} class="mask-input" /> Binded value: {{this.phoneNumber}}
+  <br>
+  Credit card: <EmberMaskInput @maskType='credit-card' @onUpdate={{this.updateCreditCard}} class="mask-input" /> Binded value: {{this.creditCard}}
 </div>
 <!-- //END-SNIPPET -->
-
-

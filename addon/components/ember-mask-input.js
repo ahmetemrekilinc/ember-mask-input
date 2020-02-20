@@ -50,12 +50,14 @@ export default class EmberMaskInput extends Component {
     }
   }
 
-  fillUnmaskedValueAsMasked(element, [mask, selectionStartPosition, selectionEndPosition, maskType, value]) {
+  fillUnmaskedValueAsMasked(element, [mask, selectionStartPosition, selectionEndPosition, maskType]) {
     if(isPresent(mask)){
+      let unmaskedValue = $(element).cleanVal();
+
       if(maskType === 'iban'){
-        value = String(value).toUpperCase();
+        unmaskedValue = String(unmaskedValue).toUpperCase();
       }
-      let maskedValue = $(element).masked(value);
+      let maskedValue = $(element).masked(unmaskedValue);
       $(element).val(maskedValue);
       $(element).change();
 
