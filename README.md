@@ -12,6 +12,14 @@ ember-mask-input
 ember-mask-input is an addon that enables you creating masked text inputs in your Ember.js application.
 [jquery-mask-plugin](https://github.com/igorescobar/jQuery-Mask-Plugin) is used in background.
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 
@@ -25,22 +33,22 @@ Usage
 
 You can pass your value as `value` parameter and custom mask type as `mask` parameter.
 ```hbs
-{{ember-mask-input value='1234123443214321' mask='0000.0000.0000.0000' }}
+<EmberMaskInput @value='1234123443214321' @mask='0000.0000.0000.0000' />
 ```
 
 You can handle actions as `onUpdate` parameter.
 ```hbs
-{{ember-mask-input value='1234123443214321' mask='0000.0000.0000.0000' onUpdate=(action 'myMaskAction') }}
+<EmberMaskInput @value='1234123443214321' @mask='0000.0000.0000.0000' @onUpdate={{this.myMaskAction}} />
 ```
 
 You can use default `maskType` parameters which are `iban`, `phone-no`, `credit-card`.
 ```hbs
-{{ember-mask-input value='TR625373458726249832302426' maskType='iban' }}
+<EmberMaskInput @value={{this.ibanValue}} @maskType='iban' />
 ```
 
 You can bind masked value by setting `bindMasked` parameter to `true`.
 ```hbs
-{{ember-mask-input value='TR62 5373 4587 2624 9832 3024 26' maskType='iban' bindMasked=true }}
+<EmberMaskInput @value='TR62 5373 4587 2624 9832 3024 26' @maskType='iban' @bindMasked={{true}} />
 ```
 
 Checkout live examples at [ember-mask-input demo page](https://ahmetemrekilinc.github.io/ember-mask-input-demo/)
