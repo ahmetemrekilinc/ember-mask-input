@@ -68,14 +68,15 @@ export default class EmberMaskInput extends Component {
 
   @action
   _domValueChanged(){
-    let unmaskedValue = isPresent(this._mask) ? $('#' + this.maskInputId).cleanVal() : this.args.value;
-    let maskedValue = isPresent(this._mask) ? $('#' + this.maskInputId).val() : this.args.value;
+    let maskInput = $('#' + this.maskInputId);
+    let unmaskedValue = isPresent(this._mask) ? maskInput.cleanVal() : this.args.value;
+    let maskedValue = isPresent(this._mask) ? maskInput.masked(maskInput.val()) : this.args.value;
 
     let valueToBeSent = this.args.bindMasked === true ? maskedValue : unmaskedValue;
 
     // store current positions in variables
-    let selectionStartPosition = $('#' + this.maskInputId)[0].selectionStart;
-    let selectionEndPosition = $('#' + this.maskInputId)[0].selectionEnd;
+    let selectionStartPosition = maskInput[0].selectionStart;
+    let selectionEndPosition = maskInput[0].selectionEnd;
 
     if(this.args.maskType === 'iban'){
       valueToBeSent = String(valueToBeSent).toUpperCase();
